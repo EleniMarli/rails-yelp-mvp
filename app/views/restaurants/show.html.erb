@@ -1,12 +1,12 @@
-<h1> <%= @restaurant.name %> </h1>
+<h1> <%= @restaurant.name%> </h1>
 
-<h2>Address: <%= @restaurant.address %> </h2>
-<h2>Phone number: <%= @restaurant.phone_number %> </h2>
-<h2>Category: <%= @restaurant.category %> </h2>
-<h2>Reviews:
+<h4>Address: <%= @restaurant.address %> </h4>
+<h4>Phone number: <%= @restaurant.phone_number %> </h4>
+<h4>Category: <%= @restaurant.category %> </h4>
+<h4>Reviews:
   <ul>
     <% @restaurant.reviews.each do |review|%>
       <li> (<%= review.rating %>/5): <%= review.content %></li>
     <%end%>
   </ul>
-</h2>
+</h4>
