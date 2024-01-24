@@ -1,8 +1,9 @@
-<h1> <%= @restaurant.name%> </h1>
+<h1 class='fw-bold'> <%= @restaurant.name%> </h1>
 
 <h4>Address: <%= @restaurant.address %> </h4>
 <h4>Phone number: <%= @restaurant.phone_number %> </h4>
 <h4>Category: <%= @restaurant.category %> </h4>
+
 <h4>Reviews:
   <ul>
     <% @restaurant.reviews.each do |review|%>
@@ -10,3 +11,10 @@
     <%end%>
   </ul>
 </h4>
+
+<h4>Write a review for <%= @restaurant.name %>:</h4>
+<%= simple_form_for [@restaurant, @review] do |f| %>
+  <%= f.input :rating %>
+  <%= f.input :content %>
+  <%= f.submit class: "btn btn-primary" %>
+<% end %>
