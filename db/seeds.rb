@@ -7,3 +7,31 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
+restaurant_names = [
+  'The Gourmet Palette',
+  'Savory Haven',
+  'Fusion Delights',
+  'Urban Spice Junction',
+  'Tranquil Bites Café'
+]
+
+addresses = [
+  '123 Main Street, Cityville, State',
+  '456 Oak Avenue, Townsville, State',
+  '789 Maple Lane, Villagetown, State',
+  '101 Pine Road, Hamletville, State',
+  '202 Cedar Street, Suburbia, State'
+]
+
+categories = [
+  'chinese',
+  'italian',
+  'japanese',
+  'french',
+  'belgian'
+]
+
+restaurant_names.each_with_index do |rest, index|
+  Restaurant.create(name: rest, address: addresses[index], category: categories.sample)
+end
